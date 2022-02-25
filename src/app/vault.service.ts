@@ -111,7 +111,7 @@ export class VaultService {
   async restoreSession() {
     try {
       // NOTE: This will unlock the vault (if locked) to get the value
-      //       If biometrics were changed since last unlock event this is when the vault will error (see line 54-69)
+      //       If biometrics were changed since last unlock event this is when the vault will error (see line 72-87)
       //       If Vault is InMemory and was previously locked, the vault was cleared so there is no longer any data to restore
       const value = await this.vault.getValue(key);
       this.state.session = value === null ? undefined : value;
